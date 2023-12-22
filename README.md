@@ -22,6 +22,10 @@
 - Started working on Geolocation API.
 - [Demo video for current state](https://drive.google.com/file/d/1nokihEIQxLApQcL5rq93Z3ml_dbC3tx_/view?usp=sharing)
 
+### Laborator 11
+- We started adding audio lines to the ghosts when a player clicks on them (the current voices are only a test, they will be modified)
+- [Demo video for audio lines](https://drive.google.com/file/d/1SSu0FutcrAHfSeTwy_Z_JYCfTJkKYM0o/view?usp=sharing)
+
 ## Screenshots
 ![WireFrames](https://github.com/Proiect-IMR/Proiect-IMR/assets/36382081/0e48121d-1824-42eb-904b-abd63a957324)
 ![Unity1](https://github.com/Proiect-IMR/Proiect-IMR/assets/36382081/8ea0aca9-1f0b-4425-878f-fb2081d88458)
