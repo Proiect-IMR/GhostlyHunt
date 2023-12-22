@@ -25,6 +25,8 @@
 ### Laborator 11
 - We started adding audio lines to the ghosts when a player clicks on them (the current voices are only a test, they will be modified)
 - [Demo video for audio lines](https://drive.google.com/file/d/1SSu0FutcrAHfSeTwy_Z_JYCfTJkKYM0o/view?usp=sharing)
+- Geospatial first tests with Cesium
+- [Demo video for geospatial api](https://drive.google.com/file/d/13Ftf-RlSCiEw8FQOTwpR9DweYKjo3p7y/view?usp=sharing)
 
 ## Screenshots
 ![WireFrames](https://github.com/Proiect-IMR/Proiect-IMR/assets/36382081/0e48121d-1824-42eb-904b-abd63a957324)
