@@ -16,6 +16,10 @@ public class DialogueManager : MonoBehaviour
     public GameObject inputFieldObject;
 
 
+    public AudioClip[] dialogueAudioClips;
+
+    public AudioSource audioSource;
+
     private int currentDialogueIndex = 0;
 
     private void Start()
@@ -24,6 +28,10 @@ public class DialogueManager : MonoBehaviour
         ghostName.SetActive(false);
         inputFieldObject.SetActive(false);
         guessButton.SetActive(false);
+        if (audioSource == null)
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
     }
 
     public void AdvanceDialogue()
@@ -31,11 +39,7 @@ public class DialogueManager : MonoBehaviour
         Debug.Log("AdvanceDialogue");
         if (currentDialogueIndex >= npc.dialogue.Length)
         {
-            currentDialogueIndex = 0;
-            dialoguePanel.SetActive(false);
-            ghostName.SetActive(true);
-            ghostNameText.text = npc.ghostName;
-            inputFieldObject.SetActive(false);
+            EndDialogue();
         }
         else
         {
@@ -45,22 +49,19 @@ public class DialogueManager : MonoBehaviour
             }
 
             dialogueText.text = npc.dialogue[currentDialogueIndex];
-            if (currentDialogueIndex == 3)
+
+            if (audioSource != null && dialogueAudioClips != null && currentDialogueIndex < dialogueAudioClips.Length)
             {
-                inputFieldObject.SetActive(true);
-                guessButton.SetActive(true);
-                inputField.text = "";
+                audioSource.Stop(); // Stop any currently playing clips
+                audioSource.PlayOneShot(dialogueAudioClips[currentDialogueIndex]); // Then play the new clip
             }
-            else
-            {
-                inputFieldObject.SetActive(false);
-                guessButton.SetActive(false);
-            }
+
+            HandleInputVisibility();
+
             currentDialogueIndex++;
-
-
         }
     }
+
     public void CheckAnswer()
     {
         string userInput = inputField.text.Replace(" ", "").Trim();
@@ -78,6 +79,27 @@ public class DialogueManager : MonoBehaviour
         inputFieldObject.SetActive(false);
         guessButton.SetActive(false);
     }
-
+    private void EndDialogue()
+    {
+        currentDialogueIndex = 0;
+        dialoguePanel.SetActive(false);
+        ghostName.SetActive(true);
+        ghostNameText.text = npc.ghostName;
+        inputFieldObject.SetActive(false);
+    }
+    private void HandleInputVisibility()
+    {
+        if (currentDialogueIndex == 3)
+        {
+            inputFieldObject.SetActive(true);
+            guessButton.SetActive(true);
+            inputField.text = "";
+        }
+        else
+        {
+            inputFieldObject.SetActive(false);
+            guessButton.SetActive(false);
+        }
+    }
 
 }
