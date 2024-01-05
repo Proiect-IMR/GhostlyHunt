@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/VeronicaMicle.unity
     guid: 674fc929c4e53be4eb7efba4fc9c7d68
+  - enabled: 1
+    path: Assets/Scenes/GameMenu.unity
+    guid: 1fd028dac976f3041bb68f715da8583d
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: a45cfaafd0ce35949aa2f26c91128f7e, type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 13dbecff010ceb145ab2e51e92f5bb54, type: 2}
